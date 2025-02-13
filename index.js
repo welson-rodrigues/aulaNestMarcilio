@@ -2,7 +2,6 @@
 //https://node-postgres.com/apis/pool
 
 import pg from 'pg'
-//const pg = require('pg');
 
 const { Pool, Client } = pg
 
@@ -20,11 +19,11 @@ const pool = new Pool({
 const client = await pool.connect()
 try {
 	await client.query('BEGIN')
-	const queryText = 'INSERT INTO Aluno (nome) VALUES($1) RETURNING idaluno'
-	const res = await client.query(queryText, ['Zee'])
-	const queryText2 = 'INSERT INTO Aluno (nome) VALUES($1) RETURNING idaluno'
-        const res2 = await client.query(queryText, ['Xuxa'])
-	const queryText3 = 'DELETE FROM Aluno WHERE idaluno = 2'
+	//const queryText = 'INSERT INTO Aluno (nome) VALUES($1) RETURNING idaluno'
+	//const res = await client.query(queryText, ['Zee'])
+	//const queryText2 = 'INSERT INTO Aluno (nome) VALUES($1) RETURNING idaluno'
+        //const res2 = await client.query(queryText, ['Xuxa'])
+	const queryText3 = 'DELETE FROM Aluno WHERE idaluno = 1'
         const res3 = await client.query(queryText3)
 	
 	await client.query('COMMIT')
